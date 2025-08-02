@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CogniNest | Smart Cognitive Care for Parkinson's</title>
+
+  <!--Imports-->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="min-h-screen bg-[#f4f7f2] flex flex-col items-center justify-center px-4 py-10">
+
+  <!-- Authentication Container -->
+  <main id="auth-container" role="main" aria-label="Login or Sign up to CogniNest"
+        class="w-full max-w-lg bg-white border border-gray-300 shadow-lg rounded-xl p-8">
+
+    <header class="text-center mb-8 select-none">
+      <h1 class="text-4xl font-extrabold text-[#3a6d3a] tracking-wide">CogniNest</h1>
+      <p class="mt-1 text-gray-600 text-lg max-w-xs mx-auto">
+        Smart Cognitive Care for Parkinson's<br>
+        <span class="italic text-sm">(Cognition + Neuro Engagement and Support Tools)</span>
+      </p>
+    </header>
+
+    <section class="mb-6">
+      <h2 id="auth-mode-label" class="text-xl font-semibold text-gray-800 mb-6 text-center">Log In to Your Account</h2>
+
+      <input 
+        type="email" 
+        id="auth-email" 
+        placeholder="Email address" 
+        aria-label="Email address"
+        class="w-full mb-4 px-5 py-3 border border-gray-300 rounded-lg focus:ring-3 focus:ring-[#3a6d3a] focus:outline-none"
+      />
+      
+      <input 
+        type="password" 
+        id="auth-password" 
+        placeholder="Password" 
+        aria-label="Password"
+        class="w-full mb-4 px-5 py-3 border border-gray-300 rounded-lg focus:ring-3 focus:ring-[#3a6d3a] focus:outline-none"
+      />
+
+      <label for="auth-role" class="block mb-1 font-semibold text-gray-700">Select your role</label>
+      <select id="auth-role" aria-label="User role" class="w-full mb-6 px-5 py-3 border border-gray-300 rounded-lg focus:ring-3 focus:ring-[#3a6d3a] focus:outline-none">
+        <option value="user" selected>User</option>
+        <option value="caregiver">Caregiver / Family</option>
+        <option value="clinician">Clinician</option>
+      </select>
+      
+      <button 
+        id="auth-submit-button" 
+        class="w-full bg-[#3a6d3a] hover:bg-[#2a552a] text-white font-semibold py-3 rounded-lg transition"
+      >
+        Log In
+      </button>
+
+      <button 
+        id="toggle-auth-button" 
+        class="mt-5 w-full text-sm text-[#3a6d3a] hover:underline focus:outline-none focus:ring-2 focus:ring-[#3a6d3a]"
+        aria-pressed="false"
+      >
+        Don't have an account? Sign up
+      </button>
+    </section>
+
+  </main>
+
+  <!-- Main App Container -->
+  <section id="main-app" class="hidden w-full max-w-6xl p-6 flex flex-col min-h-screen bg-white rounded-xl shadow-lg">
+
+    <!-- App Header with Logout -->
+    <header class="flex justify-between items-center mb-6 pb-4 border-b border-gray-200">
+      <div>
+        <h1 class="text-2xl font-bold text-[#3a6d3a]">CogniNest Dashboard</h1>
+        <p id="user-welcome" class="text-gray-600"></p>
+      </div>
+      <button 
+        id="logout-button"
+        class="px-4 py-2 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-600 transition"
+        aria-label="Log out of CogniNest"
+      >
+        Logout
+      </button>
+    </header>
+
+    <nav id="app-nav" class="flex flex-wrap items-center gap-2 border-b border-green-600 mb-6 pb-4" aria-label="Primary">
+      <!-- Tabs inserted here dynamically -->
+    </nav>
+
+    <div id="app-content" class="w-full p-4 flex-grow overflow-y-auto">
+      <!-- Content inserted dynamically -->
+    </div>
+
+  </section>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
