@@ -45,35 +45,16 @@ const prompts = [
   "Talk about a person who inspires you.",
 ];
 
-// Mock data for caregiver dashboard
 const mockPatients = [
   {
     id: '1',
-    name: 'John Smith',
+    name: 'Mary Huang',
     lastActivity: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000),
-    journalScore: 4.2,
+    journalScore: 4.5,
     status: 'active',
-    recentEntries: 15,
+    recentEntries: 4,
     moodTrend: 'improving'
   },
-  {
-    id: '2',
-    name: 'Mary Johnson',
-    lastActivity: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000),
-    journalScore: 2.8,
-    status: 'warning',
-    recentEntries: 8,
-    moodTrend: 'declining'
-  },
-  {
-    id: '3',
-    name: 'Alejandro Garcia',
-    lastActivity: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000),
-    journalScore: 3.9,
-    status: 'active',
-    recentEntries: 22,
-    moodTrend: 'stable'
-  }
 ];
 
 // Clear session on page load to force re-authentication
@@ -231,11 +212,11 @@ function renderContent(role, tabId) {
           <h2 class="text-3xl font-bold text-[#3a6d3a] mb-6">Welcome to Your Cognitive Care Hub</h2>
           <div class="grid md:grid-cols-2 gap-6">
             <div class="metric-card">
-              <div class="metric-value">7</div>
+              <div class="metric-value">1</div>
               <div class="metric-label">Days Active This Week</div>
             </div>
             <div class="metric-card">
-              <div class="metric-value">4.2</div>
+              <div class="metric-value">0</div>
               <div class="metric-label">Average Journal Score</div>
             </div>
           </div>
