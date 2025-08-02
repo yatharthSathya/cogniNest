@@ -1,4 +1,4 @@
-# cogniNest
+# CogniNest
 (Cognition + Neuro Engagement and Support Tools)
 Support Minds, Ease Journeys: CogniNest for Parkinson’s Care
 
