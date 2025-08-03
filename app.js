@@ -1,10 +1,10 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyCplmPKfzmoxOOjDZUm-vZXmK4BC3-t3DI",
+  apiKey: "API-KEY-HERE",
   authDomain: "cogninest-96113.firebaseapp.com",
   projectId: "cogninest-96113",
   storageBucket: "cogninest-96113.firebasestorage.app",
   messagingSenderId: "1007694135081",
-  appId: "1:1007694135081:web:b7be719690c4e71c59c138",
+  appId: "API-ID-Here",
   measurementId: "G-RTMMW2XYQ3"
 };
 
